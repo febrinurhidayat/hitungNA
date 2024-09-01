@@ -45,6 +45,18 @@
         .hidden {
             display: none;
         }
+
+        /* Menghilangkan spinner di Chrome, Safari, Edge, dan Opera */
+        input[type="number"]::-webkit-outer-spin-button,
+        input[type="number"]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        /* Menghilangkan spinner di Firefox */
+        input[type="number"] {
+            -moz-appearance: textfield;
+        }
     </style>
     <script>
         function showStep(step) {
@@ -58,6 +70,7 @@
     </script>
 </head>
 @include('partials.navbar')
+
 <body class="bg-gray-100">
     <div class="container mx-auto p-4 flex justify-center">
         <div class="w-full max-w-sm">
@@ -87,7 +100,7 @@
                         <label for="matkul" class="floating-label text-gray-700">Mata Kuliah</label>
                     </div>
                     <div class="floating-label-group">
-                        <input type="number"  step="1" min="1" name="smtr" id="smtr"
+                        <input type="number" step="1" min="1" name="smtr" id="smtr"
                             class="floating-input w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                             placeholder=" " required aria-label="Semester">
                         <label for="smtr" class="floating-label text-gray-700">Semester</label>

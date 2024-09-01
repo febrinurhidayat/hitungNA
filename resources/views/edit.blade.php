@@ -40,6 +40,18 @@
         .floating-label-group input {
             padding-top: 1.5em;
         }
+
+        /* Menghilangkan spinner di Chrome, Safari, Edge, dan Opera */
+        input[type="number"]::-webkit-outer-spin-button,
+        input[type="number"]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        /* Menghilangkan spinner di Firefox */
+        input[type="number"] {
+            -moz-appearance: textfield;
+        }
     </style>
 </head>
 @include('partials.navbar')
